@@ -12,24 +12,21 @@
 <h1>로그인 페이지</h1>
 </header>
 <hr/>
-<nav>
-	<a href="/apple/member?cmd=loginForm">로그인</a>
-	<a href="/apple/member?cmd=joinForm">회원가입</a>
-</nav>
+<%@include file="../include/nav.jsp" %>
 <section>
-	<form action="/apple/post?cmd=loginProc" method="post">
+	<form action="/apple/member?cmd=loginProc" method="post">
 	<table border="1">
 		<tr>
 			<th>유저네임</th>
-			<td><input value="유저네임 넣기"type="text" name="username" readonly/></td>
+			<td><input placeholder="username" type="text" name="username"/></td>
 		</tr>
 		<tr>
 			<th>패스워드</th>
-			<td><input type="text" name="password"/></td>
+			<td><input type="text"  placeholder="password" name="password"/></td>
 		</tr>	
 		<tr>
 			<th>이메일</th>
-			<td><input value="이메일 넣기" type="text" name="email"/></td>
+			<td><input placeholder="email" type="text" name="email"/></td>
 		</tr>	
 	</table>
 	<button>로그인</button>

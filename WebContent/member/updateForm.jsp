@@ -12,22 +12,22 @@
 <h1>글수정 페이지</h1>
 </header>
 <hr/>
-<nav>
-	<a href="/apple/member?cmd=loginForm">로그인</a>
-	<a href="/apple/member?cmd=joinForm">회원가입</a>
-</nav>
+<%@include file="../include/nav.jsp" %>
 <section>
-	<form action="/apple/post?cmd=saveProc" method="post">
+	<form action="/apple/member?cmd=saveProc" method="post">
 	<table border="1">
 		<tr>
-			<th>제목</th>
-			<td><input value="제목입니다. 넣기" type="text" name="title"/></td>
+			<th>유저네임</th>
+			<td><input type="text" name="username" readonly></td>
 		</tr>
 		<tr>
-			<th>내용</th>
-			<td><textarea rows="3" cols="22" name="content"></textarea></td>
+			<th>패스워드</th>
+			<td><input type="text" name="password"/></td>
 		</tr>
-
+		<tr>
+			<th>이메일</th>
+			<td><input type="text" name="email"/></td>
+		</tr>
 	</table>
 	<button>글수정 완료</button>
 	</form>
