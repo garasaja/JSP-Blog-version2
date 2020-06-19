@@ -1,4 +1,4 @@
-package com.cos.apple.action.member;
+package com.cos.apple.action.post;
 
 import java.io.IOException;
 
@@ -8,14 +8,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.cos.apple.action.Action;
-import com.cos.apple.dao.MemberDao;
 
-public class MemberLogoutProcAction implements Action{
+public class PostSaveFormAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		session.invalidate();
+		if(session.getAttribute("principal") == null) {
+			response.sendRedirect("member/loginForm.jsp");
+			return;
+		}
 		
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("post/saveForm.jsp");
+		
 	}
 }
