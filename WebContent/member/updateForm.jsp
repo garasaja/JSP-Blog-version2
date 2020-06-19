@@ -4,32 +4,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글수정 페이지</title>
+<title>회원수정 페이지</title>
 <link rel="stylesheet" href="/apple/static/css/style.css" />
 </head>
 <body>
 <header>
-<h1>글수정 페이지</h1>
+<h1>회원수정 페이지</h1>
 </header>
 <hr/>
 <%@include file="../include/nav.jsp" %>
 <section>
-	<form action="/apple/member?cmd=saveProc" method="post">
+	<form action="/apple/member?cmd=updateProc" method="post">
+	<input type="hidden" value="${sessionScope.principal.id}" name="id" />
 	<table border="1">
 		<tr>
 			<th>유저네임</th>
-			<td><input type="text" name="username" readonly></td>
+			<td><input value="${sessionScope.principal.username}"type="text" name="username" readonly></td>
 		</tr>
 		<tr>
 			<th>패스워드</th>
-			<td><input type="text" name="password"/></td>
+			<td><input type="text" name="password" required/></td>
 		</tr>
 		<tr>
 			<th>이메일</th>
-			<td><input type="text" name="email"/></td>
+			<td><input value="${sessionScope.principal.email}"type="text" name="email"/></td>
 		</tr>
 	</table>
-	<button>글수정 완료</button>
+	<button>회원수정 완료</button>
 	</form>
 </section>
 <footer>
