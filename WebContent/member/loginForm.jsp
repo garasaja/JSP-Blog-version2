@@ -23,11 +23,7 @@
 		<tr>
 			<th>패스워드</th>
 			<td><input type="text"  placeholder="password" name="password"/></td>
-		</tr>	
-		<tr>
-			<th>이메일</th>
-			<td><input placeholder="email" type="text" name="email"/></td>
-		</tr>	
+		</tr>			
 	</table>
 	<button>로그인</button>
 	</form>

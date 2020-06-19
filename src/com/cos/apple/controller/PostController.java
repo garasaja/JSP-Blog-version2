@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.apple.action.Action;
+import com.cos.apple.action.member.MemberJoinFormAction;
 import com.cos.apple.action.post.PostListAction;
 
 // http://localhost:8000/apple/post
@@ -41,7 +42,9 @@ public class PostController extends HttpServlet {
 	}
 
 	private Action router(String cmd) {
-		
+		if (cmd.equals("list")) {
+			return new PostListAction();
+		}
 		return null;
 	}
 }
