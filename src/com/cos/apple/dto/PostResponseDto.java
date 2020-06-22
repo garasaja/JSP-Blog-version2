@@ -1,6 +1,6 @@
-package com.cos.apple.model;
+package com.cos.apple.dto;
 
-import java.sql.Timestamp;
+import com.cos.apple.model.Post;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,12 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Member {
-	private int id;
+public class PostResponseDto {
+	private Post post;
 	private String username;
-	private String password;
-	private String email;
-	private Timestamp createDate;
 }
-
-

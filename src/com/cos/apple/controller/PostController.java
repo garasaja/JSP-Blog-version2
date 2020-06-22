@@ -9,9 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.apple.action.Action;
+import com.cos.apple.action.post.PostDeleteProcAction;
+import com.cos.apple.action.post.PostDetailProcAction;
 import com.cos.apple.action.post.PostListAction;
 import com.cos.apple.action.post.PostSaveFormAction;
 import com.cos.apple.action.post.PostSaveProcAction;
+import com.cos.apple.action.post.PostUpdateFormAction;
+import com.cos.apple.action.post.PostUpdateProcAction;
 
 // http://localhost:8000/apple/post
 @WebServlet("/post")
@@ -49,6 +53,14 @@ public class PostController extends HttpServlet {
 			return new PostSaveFormAction();
 		}else if(cmd.equals("saveProc")) {
 			return new PostSaveProcAction();
+		}else if(cmd.equals("detailProc")) {
+			return new PostDetailProcAction();
+		}else if(cmd.equals("updateForm")) {
+			return new PostUpdateFormAction();
+		}else if(cmd.equals("updateProc")) {
+			return new PostUpdateProcAction();
+		}else if(cmd.equals("deleteProc")) {
+			return new PostDeleteProcAction();
 		}
 		return null;
 	}
